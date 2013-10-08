@@ -1,1 +1,0 @@
-(ns paper-racer.core)
