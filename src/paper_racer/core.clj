@@ -20,17 +20,12 @@
 (defn draw-state [state]
   ; Clear the sketch by filling it with light-grey color.
   (q/background 240)
-  ; Set circle color.
-  (q/fill (:color state) 255 255)
-  ; Calculate x and y coordinates of the circle.
-  (let [angle (:angle state)
-        x (* 150 (q/cos angle))
-        y (* 150 (q/sin angle))]
-    ; Move origin point to the center of the sketch.
-    (q/with-translation [(/ (q/width) 2)
-                         (/ (q/height) 2)]
-      ; Draw the circle.
-      (q/ellipse x y 100 100))))
+  ; Set grid color.
+  (q/fill 80)
+  ; Draw grid points
+  (doall (for [x (range 20 (q/width) 20)
+               y (range 20 (q/height) 20)]
+           (q/point x y))))
 
 (q/defsketch paper-racer
   :title "You spin my circle right round"
