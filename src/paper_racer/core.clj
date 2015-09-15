@@ -28,7 +28,7 @@
            (q/point x y))))
 
 (q/defsketch paper-racer
-  :title "You spin my circle right round"
+  :title "Paper Racer"
   :size [500 500]
   ; setup function called only once, during sketch initialization.
   :setup setup
